@@ -1,30 +1,18 @@
-import React, { Component } from "react";
-import ErrorCatch from "./ErrorCatch";
-import LifeCycle from "./LifeCycle";
+import React, { useState } from "react";
+import Counter from "./HooksTutorial/Counter";
 
-function getRandomColor() {
-  return "#" + Math.floor(Math.random() * 16777215).toString(16);
-}
-class App extends Component {
-  state = {
-    color: "#00000",
+const App = () => {
+  const [vsisit, setVisit] = useState(false);
+  const btnOnClick = () => {
+    setVisit(!vsisit);
   };
-  handleClick = () => {
-    this.setState({
-      color: getRandomColor(),
-    });
-    console.log(this.state.color);
-  };
-  render() {
-    return (
-      <div>
-        <button onClick={this.handleClick}>랜덤색상 만들기</button>
-        <ErrorCatch>
-          <LifeCycle color={this.state.color} />
-        </ErrorCatch>
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <button onClick={btnOnClick}>{vsisit ? "숨기기" : "보이기"}</button>
+      <hr />
+      {vsisit && <Counter />}
+    </div>
+  );
+};
 
 export default App;

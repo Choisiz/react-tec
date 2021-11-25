@@ -1,6 +1,6 @@
 import Counter from "./Counter";
 import EventPratice from "./EventPratice";
-//ww
+//wwsss
 const App = () => {
   return <EventPratice />;
 };

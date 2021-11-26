@@ -1,21 +1,12 @@
 import React, { useState, useEffect, useReducer } from "react";
-
-function reducer(state, action) {
-  console.log("ac", action);
-  return {
-    ...state,
-    [action.name]: action.value,
-  };
-}
+import useInput from "./useInput";
 
 const Counter = () => {
-  const [state, dispatch] = useReducer(reducer, { name: "", id: "" });
+  const [state, onChange] = useInput({
+    name: "",
+    id: "",
+  });
   const { name, id } = state;
-
-  const onChange = (e) => {
-    dispatch(e.target);
-    console.log("tar", e.target);
-  };
 
   return (
     <div>

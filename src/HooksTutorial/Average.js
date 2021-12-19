@@ -1,12 +1,18 @@
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo, useCallback, useRef } from "react";
 
 const Average = () => {
   const [list, setList] = useState([]);
   const [number, setNumber] = useState("");
+<<<<<<< HEAD
   const [re, setRe] = useState(0);
+=======
+  const inputEl = useRef(null);
+>>>>>>> 41c56c8012232020a24fa4dbd22abb05b574c466
 
-  const onChange = (e) => {
+  //컴포넌트가 처음 렌더링 될때만 실행
+  const onChange = useCallback((e) => {
     setNumber(e.target.value);
+<<<<<<< HEAD
   };
   const onInsert = (e) => {
     const nextLine = list.concat(parseInt(number));
@@ -22,10 +28,22 @@ const Average = () => {
     const result = sum / numbers.length;
     setRe(result);
   };
+=======
+  }, []);
+  const onInsert = useCallback(
+    (e) => {
+      const nextLine = list.concat(parseInt(number));
+      setList(nextLine);
+      setNumber("");
+      inputEl.current.focus();
+    },
+    [number, list]
+  );
+>>>>>>> 41c56c8012232020a24fa4dbd22abb05b574c466
 
   return (
     <div>
-      <input value={number} onChange={onChange} />
+      <input value={number} onChange={onChange} ref={inputEl} />
       <button onClick={onInsert}>등록</button>
       <ul>
         {list.map((value, index) => (

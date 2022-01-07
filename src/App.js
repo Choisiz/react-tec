@@ -7,6 +7,7 @@ function App() {
   const [good, setGood] = useState(0);
   const [target, setTarget] = useState(0);
   let [modal, setModal] = useState(false);
+  let [inputValue, setInputValue] = useState("");
   let today = "크리스마스";
 
   const titleState = () => {
@@ -20,8 +21,17 @@ function App() {
   };
 
   const targetState = (i) => {
-    console.log("d", i);
     setTarget(i);
+  };
+
+  const inputState = (e) => {
+    setInputValue(e.target.value);
+  };
+
+  const inputStore = () => {
+    let arrayCopy = [...title];
+    arrayCopy.unshift(inputValue);
+    setTitle(arrayCopy);
   };
 
   return (
@@ -29,8 +39,9 @@ function App() {
       <div className="black-nav">
         <div>개발 블로그</div>
       </div>
+      //map같은경우 key를 강요
       {title.map((value, i) => (
-        <div className="list">
+        <div className="list" key={i}>
           <h1 onClick={() => targetState(i)}>
             {value}
             <span onClick={goodState}>🧡{good}</span>
@@ -39,7 +50,10 @@ function App() {
           <hr />
         </div>
       ))}
-
+      <div className="publish">
+        <input onChange={inputState} />
+        <button onClick={inputStore}>저장</button>
+      </div>
       <button onClick={() => setModal(!modal)}>온오프</button>
       {modal === true ? <Modal title={title} target={target} /> : null}
     </div>

@@ -4,6 +4,7 @@ import TopNavi2 from "./components/TopNavi2";
 import UseReducerExam from "./components/UseReducerExam";
 import UseContextExam from "./components/UseContextExam";
 import UseOptimisticExam from "./components/UseOptimisticExam";
+import UseActionStateExam from "./components/UseActionStateExam";
 
 function App() {
   return (
@@ -17,7 +18,10 @@ function App() {
       </Routes>
       <Routes>
         <Route path="/use-optimistic" element={<UseOptimisticExam />}></Route>
-        {/* <Route path="/use-action-state" element={<UseActionStateExam />}></Route> */}
+        <Route
+          path="/use-action-state"
+          element={<UseActionStateExam />}
+        ></Route>
         {/* <Route path="/use-form-statuse" element={<UseFormStatusExam />}></Route> */}
       </Routes>
     </>

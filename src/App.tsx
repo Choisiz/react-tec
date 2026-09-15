@@ -5,6 +5,7 @@ import UseReducerExam from "./components/UseReducerExam";
 import UseContextExam from "./components/UseContextExam";
 import UseOptimisticExam from "./components/UseOptimisticExam";
 import UseActionStateExam from "./components/UseActionStateExam";
+import UseFormStatusExam from "./components/UseFormStatusExam";
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
           path="/use-action-state"
           element={<UseActionStateExam />}
         ></Route>
-        {/* <Route path="/use-form-statuse" element={<UseFormStatusExam />}></Route> */}
+        <Route path="/use-form-status" element={<UseFormStatusExam />}></Route>
       </Routes>
     </>
   );

@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router";
 import TopNavi from "./components/TopNavi";
 import TopNavi2 from "./components/TopNavi2";
 import TopNavi3 from "./components/TopNavi3";
+import TopNavi4 from "./components/TopNavi4";
 import UseReducerExam from "./components/UseReducerExam";
 import UseContextExam from "./components/UseContextExam";
 import UseOptimisticExam from "./components/UseOptimisticExam";
@@ -12,6 +13,8 @@ import { store } from "./exam1/store";
 import ReduxBasicApp from "./exam1/ReduxBasicApp";
 import { Provider as TodoProvider } from "react-redux";
 import TodoApp from "./exam1/TodoApp";
+import ZustandBasicApp from "./exam1/ZustandBasicApp";
+import AttendanceApp from "./exam1/AttendanceApp";
 
 function App() {
   return (
@@ -19,6 +22,7 @@ function App() {
       <TopNavi></TopNavi>
       <TopNavi2></TopNavi2>
       <TopNavi3></TopNavi3>
+      <TopNavi4></TopNavi4>
       {/*리듀서, context API */}
       <Routes>
         <Route path="/" element={<UseReducerExam />}></Route>
@@ -52,6 +56,11 @@ function App() {
             </TodoProvider>
           }
         ></Route>
+      </Routes>
+      {/*Zustand */}
+      <Routes>
+        <Route path="/ZustandBasicApp" element={<ZustandBasicApp />}></Route>
+        <Route path="/AttendanceApp" element={<AttendanceApp />}></Route>
       </Routes>
     </>
   );

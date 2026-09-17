@@ -1,6 +1,6 @@
 import { NavLink } from "react-router";
 
-export default function TopNavi() {
+export default function TopNavi3() {
   return (
     <nav>
       <NavLink to="/ReduxBasicApp">3. 리덕스 기본사용법</NavLink>

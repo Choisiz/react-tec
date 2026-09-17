@@ -1,6 +1,6 @@
 import { NavLink } from "react-router";
 
-export default function TopNavi() {
+export default function TopNavi2() {
   return (
     <nav>
       <NavLink to="/use-optimistic">2. useOptimistic</NavLink>
